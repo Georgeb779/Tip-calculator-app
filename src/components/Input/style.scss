@@ -1,0 +1,12 @@
+$block: "input__container";
+
+.#{$block} {
+  input {
+    display: flex;
+    width: 311px;
+    height: 48px;
+    background: #f3f9fa;
+    border-radius: 5px;
+    border: none;
+  }
+}

@@ -1,0 +1,8 @@
+$block: "header__container";
+
+.#{$block} {
+  display: flex;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 40px;
+}

@@ -1,0 +1,8 @@
+$block: "calculator__container";
+
+.#{$block} {
+  span {
+    padding-top: 32px;
+    display: block;
+  }
+}
