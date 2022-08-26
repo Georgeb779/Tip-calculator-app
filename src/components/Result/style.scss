@@ -1,0 +1,13 @@
+$block: "result__container";
+
+.#{$block} {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 327px;
+  height: 257px;
+  background: #00474b;
+  border-radius: 15px;
+  margin: 32px 0;
+  padding: 37px 22px;
+}
