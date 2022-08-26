@@ -1,4 +1,4 @@
-import { Header, Footer, Calculator } from "./components";
+import { Header, Footer, Calculator, Result } from "./components";
 
 function App() {
   return (
@@ -6,6 +6,7 @@ function App() {
       <Header />
       <div className='tip-app__container'>
         <Calculator />
+        <Result />
       </div>
       <Footer />
     </div>
