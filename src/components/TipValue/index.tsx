@@ -6,7 +6,7 @@ export function TipValue({
   value
 }: {
   text: number | string;
-  value: number | string;
+  value: number;
 }) {
   return (
     <div className='tip-value__container'>

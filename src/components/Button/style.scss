@@ -16,6 +16,11 @@ $block: "button__container";
     color: #fff;
     cursor: pointer;
 
+    &.active {
+      background: #26c2ae;
+      color: #00474b;
+    }
+
     &:hover {
       background: #26c2ae;
       color: #00474b;

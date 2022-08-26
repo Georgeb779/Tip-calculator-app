@@ -3,7 +3,7 @@
 html {
   box-sizing: border-box;
   font-size: 16px;
-  background: #C5E4E7;
+  background: #c5e4e7;
   font-family: "Space Mono", monospace;
 }
 
@@ -45,7 +45,7 @@ $block: "tip-app";
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   justify-content: space-between;
 
   &__container {
