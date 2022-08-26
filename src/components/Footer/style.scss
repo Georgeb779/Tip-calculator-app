@@ -1,0 +1,13 @@
+$block: "footer__container";
+
+.#{$block} {
+  font-size: 14px;
+  text-align: center;
+  background: #fff;
+  padding-bottom: 15px;
+  a {
+    color: #00474b;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+}

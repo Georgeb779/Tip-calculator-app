@@ -1,6 +1,8 @@
+import "./style.scss";
+
 export function Footer() {
   return (
-    <footer className='attribution'>
+    <footer className='footer__container'>
       Challenge by
       <a
         target='_blank'
