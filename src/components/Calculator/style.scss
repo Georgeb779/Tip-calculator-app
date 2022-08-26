@@ -1,8 +1,26 @@
 $block: "calculator__container";
 
 .#{$block} {
+  p {
+    color: #5e7a7d;
+    margin-bottom: 16px;
+  }
   span {
     padding-top: 32px;
     display: block;
+    width: 311px;
+  }
+
+  .calculator__tip-container {
+    display: grid;
+    grid-template-columns: repeat(2, 146px);
+    grid-template-rows: repeat(3, 48px);
+    gap: 15px;
+  }
+
+  .calculator_input-container {
+    input {
+      height: 48px;
+    }
   }
 }
