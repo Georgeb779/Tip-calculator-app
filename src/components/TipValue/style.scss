@@ -1,0 +1,29 @@
+$block: "tip-value__container";
+
+.#{$block} {
+  display: flex;
+  justify-content: space-between;
+
+  h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+  }
+
+  h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 47px;
+    color: #26c2ae;
+  }
+
+  p {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 19px;
+    color: #7f9d9f;
+  }
+}
