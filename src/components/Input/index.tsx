@@ -1,17 +1,15 @@
 import React from "react";
+import { InputProps } from "../../interfaces";
 import "./style.scss";
 
-export function Input({
-  icon,
-  placeholder
-}: {
-  icon?: string;
-  placeholder?: string;
-}) {
+export function Input({ icon, placeholder }: InputProps) {
   return (
     <div className='input__container'>
-      {icon && <img src={icon} alt='input-icon' />}
-      <input type='text' placeholder={placeholder} />
+      <input
+        type='text'
+        placeholder={placeholder}
+        style={{ backgroundImage: `url(${icon})` }}
+      />
     </div>
   );
 }
