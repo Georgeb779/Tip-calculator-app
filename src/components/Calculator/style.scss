@@ -23,4 +23,19 @@ $block: "calculator__container";
       height: 48px;
     }
   }
+  @media (min-width: 1024px) {
+    span {
+      padding-top: 0;
+      width: 379px;
+    }
+
+    .calculator__tip-container {
+      grid-template-columns: repeat(3, 117px);
+      grid-template-rows: repeat(2, 48px);
+    }
+
+    .calculator_input-container {
+      margin: 40px 0;
+    }
+  }
 }

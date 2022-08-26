@@ -3,6 +3,7 @@ $block: "tip-value__container";
 .#{$block} {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   h1 {
     font-style: normal;
@@ -25,5 +26,11 @@ $block: "tip-value__container";
     font-size: 13px;
     line-height: 19px;
     color: #7f9d9f;
+  }
+  @media (min-width: 1024px) {
+    h2 {
+      font-size: 48px;
+      line-height: 71px;
+    }
   }
 }
