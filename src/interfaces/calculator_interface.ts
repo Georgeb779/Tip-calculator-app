@@ -1,7 +1,7 @@
+import { InputValueProps, SetInputValueProps } from "./";
 export interface CalculatorProps {
-  setBill: (bill: number) => void;
-  setTip: (tip: number) => void;
-  setPeople: (people: number) => void;
+  inputProps: InputValueProps;
+  SetInputValueProps: SetInputValueProps;
   setError: (error: boolean) => void;
   error: boolean;
 }

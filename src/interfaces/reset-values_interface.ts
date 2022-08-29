@@ -1,7 +1,5 @@
 import { SetInputValueProps } from "./set-input-value_interface";
 
-export interface ResultProps {
-  tipAmount: number;
-  totalAmount: number;
+export interface resetValuesProps {
   SetInputValueProps: SetInputValueProps;
 }

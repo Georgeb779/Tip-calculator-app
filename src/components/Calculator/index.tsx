@@ -6,21 +6,19 @@ import "./style.scss";
 import { Button } from "../Button";
 import { tipsData } from "../../data/tips";
 import { CalculatorProps } from "../../interfaces";
-import { inputValidator, validateAsNumber } from "../../utils";
+import { inputValidator } from "../../utils";
 import { useState } from "react";
 
 export function Calculator({
-  setBill,
-  setTip,
-  setPeople,
+  inputProps,
+  SetInputValueProps,
   setError,
   error
 }: CalculatorProps) {
-  const [activeTip, setActiveTip] = useState(0);
+  const { bill, people, customTip } = inputProps;
+  const { setBill, setTip, setCustomTip, setPeople } = SetInputValueProps;
 
-  const [customTipValue, setCustomTipValue] = useState<string | number>("");
-  const [billValue, setBillValue] = useState<string | number>("");
-  const [peopleValue, setPeopleValue] = useState<string | number>("");
+  const [activeTip, setActiveTip] = useState(0);
 
   return (
     <div className='calculator__container'>
@@ -29,10 +27,9 @@ export function Calculator({
         <Input
           placeholder='0.00'
           icon={DollarIcon}
-          value={billValue as unknown as string}
+          value={bill as unknown as string}
           onChange={(value) => {
-            validateAsNumber({ value, setBill, setError });
-            inputValidator({ value, setBill, setBillValue });
+            inputValidator({ value, setBill });
           }}
         />
       </span>
@@ -42,24 +39,24 @@ export function Calculator({
           {tipsData &&
             tipsData.map((tip, index) => (
               <Button
-                active={activeTip === parseFloat(tip.text)}
+                active={activeTip === tip.value}
                 key={index}
-                text={tip.text}
+                text={`${tip.value}%`}
                 onClick={() => {
-                  setTip(parseFloat(tip.text));
-                  setActiveTip(parseFloat(tip.text));
-                  setCustomTipValue("");
+                  setTip(tip.value);
+                  setActiveTip(tip.value);
+                  setCustomTip("" as unknown as number);
                 }}
                 type={tip.type as "primary"}
               />
             ))}
           <Input
-            value={customTipValue as unknown as string}
+            value={customTip as unknown as string}
             placeholder='Custom'
             onChange={(value) => {
-              validateAsNumber({ value, setTip, setError });
+              inputValidator({ value, setCustomTip });
               setActiveTip(parseFloat(value));
-              inputValidator({ value, setCustomTipValue, setTip });
+              setTip(0);
             }}
           />
         </div>
@@ -69,10 +66,9 @@ export function Calculator({
         <Input
           placeholder='0'
           icon={PeopleIcon}
-          value={peopleValue as unknown as string}
+          value={people as unknown as string}
           onChange={(value) => {
-            validateAsNumber({ value, setPeople, setError });
-            inputValidator({ value, setPeople, setPeopleValue });
+            inputValidator({ value, setPeople });
           }}
         />
       </span>

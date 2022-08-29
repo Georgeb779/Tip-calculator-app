@@ -1,22 +1,22 @@
 export const tipsData = [
   {
-    text: "5%",
+    value: 5,
     type: "primary"
   },
   {
-    text: "10%",
+    value: 10,
     type: "primary"
   },
   {
-    text: "15%",
+    value: 15,
     type: "primary"
   },
   {
-    text: "25%",
+    value: 25,
     type: "primary"
   },
   {
-    text: "50%",
+    value: 50,
     type: "primary"
   }
 ];

@@ -3,9 +3,10 @@ import { Header, Footer, Calculator, Result } from "./components";
 import { calculateAmounts } from "./utils/calculateAmounts";
 
 function App() {
-  const [bill, setBill] = useState(0);
-  const [tip, setTip] = useState(0);
-  const [people, setPeople] = useState(0);
+  const [bill, setBill] = useState<number | string>("");
+  const [tip, setTip] = useState<number | string>("");
+  const [customTip, setCustomTip] = useState<number | string>("");
+  const [people, setPeople] = useState<number | string>("");
 
   const [tipAmount, setTipAmount] = useState<number>(0);
   const [totalAmount, setTotalAmount] = useState<number>(0);
@@ -13,21 +14,44 @@ function App() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    calculateAmounts({ bill, tip, people, setTipAmount, setTotalAmount });
-  }, [tip, bill, people]);
+    calculateAmounts({
+      inputProps: { bill, tip, customTip, people },
+      setTipAmount,
+      setTotalAmount,
+      setCustomTip
+    });
+  }, [tip, bill, people, customTip]);
 
   return (
     <div className='tip-app'>
       <Header />
       <div className='tip-app__container'>
         <Calculator
-          setBill={setBill}
-          setTip={setTip}
-          setPeople={setPeople}
+          inputProps={{
+            bill,
+            tip,
+            people,
+            customTip
+          }}
+          SetInputValueProps={{
+            setBill,
+            setTip,
+            setCustomTip,
+            setPeople
+          }}
           setError={setError}
           error={error}
         />
-        <Result tipAmount={tipAmount} totalAmount={totalAmount} />
+        <Result
+          tipAmount={tipAmount}
+          totalAmount={totalAmount}
+          SetInputValueProps={{
+            setBill,
+            setTip,
+            setCustomTip,
+            setPeople
+          }}
+        />
       </div>
       <Footer />
     </div>

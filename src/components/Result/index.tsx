@@ -1,9 +1,14 @@
 import React from "react";
 import { Button, TipValue } from "../";
 import { ResultProps } from "../../interfaces";
+import { resetValues } from "../../utils";
 import "./style.scss";
 
-export function Result({ tipAmount, totalAmount }: ResultProps) {
+export function Result({
+  tipAmount,
+  totalAmount,
+  SetInputValueProps
+}: ResultProps) {
   return (
     <div className='result__container'>
       <div className='result__container-text'>
@@ -14,8 +19,8 @@ export function Result({ tipAmount, totalAmount }: ResultProps) {
       <Button
         type='secondary'
         text={"RESET"}
-        onClick={function (): void {
-          throw new Error("Function not implemented.");
+        onClick={() => {
+          resetValues({ SetInputValueProps });
         }}
       />
     </div>

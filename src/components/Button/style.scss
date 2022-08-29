@@ -24,6 +24,7 @@ $block: "button__container";
     &:hover {
       background: #26c2ae;
       color: #00474b;
+      transition: all 0.2s ease;
     }
   }
   .secondary {

@@ -19,9 +19,16 @@ $block: "input__container";
     background-repeat: no-repeat;
     background-position-y: center;
     background-position-x: 15px;
+    border: solid 2px #fff;
+
     &::placeholder {
       color: #547878;
       font-size: 24x;
+    }
+    &:hover,
+    &:focus {
+      border: solid 2px #26c2ae;
+      transition: all 0.3s ease-in-out;
     }
     @media (min-width: 1024px) {
       &::placeholder {

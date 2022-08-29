@@ -2,7 +2,9 @@ import React from "react";
 import { InputProps } from "../../interfaces";
 import "./style.scss";
 
-export function Input({ icon, placeholder, onChange,value }: InputProps) {
+export function Input({ icon, placeholder, onChange, value }: InputProps) {
+  
+
   return (
     <div className='input__container'>
       <input

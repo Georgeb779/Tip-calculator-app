@@ -2,23 +2,29 @@ import { inputValidatorProps } from "../interfaces/input-validator_interface";
 
 export const inputValidator = ({
   value,
-  setCustomTipValue,
-  setBillValue,
   setTip,
   setBill,
   setPeople,
-  setPeopleValue
+  setCustomTip
 }: inputValidatorProps) => {
   if (
     typeof parseFloat(value) === "number" &&
     !isNaN(parseFloat(value)) &&
-    setCustomTipValue &&
+    setCustomTip
+  ) {
+    setCustomTip(value);
+  } else {
+    setCustomTip && setCustomTip("");
+  }
+
+  if (
+    typeof parseFloat(value) === "number" &&
+    !isNaN(parseFloat(value)) &&
     setTip
   ) {
-    setCustomTipValue(value);
+    setTip(value);
   } else {
-    setCustomTipValue && setCustomTipValue("");
-    setTip && setTip(0);
+    setTip && setTip("");
   }
 
   if (
@@ -27,10 +33,8 @@ export const inputValidator = ({
     setBill
   ) {
     setBill(parseFloat(value));
-    setBillValue && setBillValue(value);
   } else {
-    setBill ? setBill(0) : null;
-    setBillValue && setBillValue("");
+    setBill ? setBill("") : null;
   }
 
   if (
@@ -39,9 +43,7 @@ export const inputValidator = ({
     setPeople
   ) {
     setPeople(parseFloat(value));
-    setPeopleValue && setPeopleValue(parseFloat(value));
   } else {
-    setPeople ? setPeople(0) : null;
-    setPeopleValue && setPeopleValue("");
+    setPeople ? setPeople("") : null;
   }
 };

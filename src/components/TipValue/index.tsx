@@ -15,7 +15,7 @@ export function TipValue({
         <p>/ person</p>
       </div>
       <div>
-        <h2>${value}</h2>
+        <h2>${value.toFixed(2)}</h2>
       </div>
     </div>
   );

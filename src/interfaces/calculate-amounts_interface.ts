@@ -1,7 +1,8 @@
+import { InputValueProps } from "./input-value_interface";
+
 export interface calculateAmountsProps {
-  bill: number;
-  tip: number;
-  people: number;
+  inputProps: InputValueProps;
   setTipAmount: (amount: number) => void;
   setTotalAmount: (amount: number) => void;
+  setCustomTip: (customTip: number | string) => void;
 }
