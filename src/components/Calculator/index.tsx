@@ -15,10 +15,16 @@ export function Calculator({
   setError,
   error
 }: CalculatorProps) {
+
   const { bill, people, customTip } = inputProps;
   const { setBill, setTip, setCustomTip, setPeople } = SetInputValueProps;
-
   const [activeTip, setActiveTip] = useState(0);
+
+  if (people === 0) {
+    setError(true);
+  } else {
+    setError(false);
+  }
 
   return (
     <div className='calculator__container'>
@@ -45,7 +51,7 @@ export function Calculator({
                 onClick={() => {
                   setTip(tip.value);
                   setActiveTip(tip.value);
-                  setCustomTip("" as unknown as number);
+                  setCustomTip("");
                 }}
                 type={tip.type as "primary"}
               />
@@ -62,11 +68,16 @@ export function Calculator({
         </div>
       </span>
       <span className='calculator_input-container'>
-        <p>Number of People</p>
+        <div>
+          <p>Number of People</p>
+          {people === 0 && <p className='text-error'>Can’t be zero</p>}
+        </div>
+
         <Input
           placeholder='0'
           icon={PeopleIcon}
           value={people as unknown as string}
+          error={error}
           onChange={(value) => {
             inputValidator({ value, setPeople });
           }}

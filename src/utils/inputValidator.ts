@@ -2,48 +2,29 @@ import { inputValidatorProps } from "../interfaces/input-validator_interface";
 
 export const inputValidator = ({
   value,
-  setTip,
   setBill,
+  setTip,
   setPeople,
   setCustomTip
 }: inputValidatorProps) => {
-  if (
-    typeof parseFloat(value) === "number" &&
-    !isNaN(parseFloat(value)) &&
-    setCustomTip
-  ) {
-    setCustomTip(value);
+  if (setBill && Number(value) && Number(value) > 0) {
+    setBill(value);
   } else {
-    setCustomTip && setCustomTip("");
+    setBill && setBill("");
   }
-
-  if (
-    typeof parseFloat(value) === "number" &&
-    !isNaN(parseFloat(value)) &&
-    setTip
-  ) {
+  if (setTip && Number(value) && Number(value) > 0) {
     setTip(value);
   } else {
     setTip && setTip("");
   }
-
-  if (
-    typeof parseFloat(value) === "number" &&
-    !isNaN(parseFloat(value)) &&
-    setBill
-  ) {
-    setBill(parseFloat(value));
+  if (setPeople && parseFloat(value) >= 0) {
+    setPeople(parseInt(value));
   } else {
-    setBill ? setBill("") : null;
+    setPeople && setPeople("");
   }
-
-  if (
-    typeof parseFloat(value) === "number" &&
-    !isNaN(parseFloat(value)) &&
-    setPeople
-  ) {
-    setPeople(parseFloat(value));
+  if (setCustomTip && Number(value) && Number(value) > 0) {
+    setCustomTip(value);
   } else {
-    setPeople ? setPeople("") : null;
+    setCustomTip && setCustomTip("");
   }
 };

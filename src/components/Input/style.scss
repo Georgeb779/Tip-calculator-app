@@ -36,4 +36,9 @@ $block: "input__container";
       }
     }
   }
+
+  input.error {
+    border: 2px solid #e17052;
+    transition: all 0.3s ease-in-out;
+  }
 }

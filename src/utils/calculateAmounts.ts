@@ -10,8 +10,6 @@ export const calculateAmounts = ({
   const finalTips =
     customTip && Number(customTip) > 0 ? Number(customTip) : tip;
 
-  console.log(finalTips);
-
   if (
     Number(bill) &&
     Number(people) &&
@@ -19,11 +17,12 @@ export const calculateAmounts = ({
     bill > 0 &&
     finalTips > 0
   ) {
-    const tipAmount = Number(bill) * (Number(finalTips) / 100);
+    const tipAmount =
+      (Number(bill) * (Number(finalTips) / 100)) / Number(people);
     const totalAmount = Number(bill) + Number(tipAmount);
     const amountPerPerson = totalAmount / Number(people);
 
-    setTipAmount(totalAmount);
+    setTipAmount(tipAmount);
     setTotalAmount(amountPerPerson);
   } else {
     setTipAmount(0);

@@ -4,6 +4,33 @@ $block: "tip-value__container";
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 344px;
+
+  & > div:nth-child(2) {
+    width: 148px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:  #26C2AE;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background:  #15aa96;
+  }
 
   h1 {
     font-style: normal;
